@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <form method="POST">
+      <label>Username:</label>
+      <input type="text" name="username">
+      <label>Password:</label>
+      <input type="password" name="password">
+      <button type="submit">Login</button>
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+{% endblock %}

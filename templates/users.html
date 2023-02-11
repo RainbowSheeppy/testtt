@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>Users</h1>
+    {% for user in user_list %}
+        <p>{{user.__str__()}}</p>
+    {% endfor %}
+    <p>Number of users: {{ user_list|length }}</p>
+{% endblock %}

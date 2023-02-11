@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block head %}
+{% endblock %}
+{% block main %}
+    <p>You have to login if u want to see this!</p>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+{% endblock %}

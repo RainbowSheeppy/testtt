@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>Title</title>
+    {% endblock %}
+</head>
+<body>
+    {% block main %}
+        {% block body %}
+            <h1>Hello!</h1>
+            <a href="{{ url_for('users') }}">Users</a>
+            {% if not session["logged"] %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        {% endblock %}
+        {% if request.path != '/' %}
+            <a href="{{ url_for('home') }}">Back to home</a>
+        {% endif %}
+        {% if session["logged"] %}
+            <p>Hello {{ session["username"] }}! <a href="{{ url_for('logout') }}">Logout</a></p>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
